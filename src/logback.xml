@@ -3,6 +3,7 @@
 	
 	<property resource="logback.properties" />
 	
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
         <!-- reset all previous level configurations of all j.u.l. loggers -->
         <resetJUL>true</resetJUL>
     </contextListener> 
