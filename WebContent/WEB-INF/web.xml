@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>JMiddleWay</display-name>
+   <listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>JMiddleWay - Middlwawre framework</servlet-name>
+		<servlet-class>
+			org.glassfish.jersey.servlet.ServletContainer
+		</servlet-class>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>com.jmiddleway.app.JMiddleWayApp_JAXRS_app</param-value>			
+		</init-param>	
+		 <init-param>
+         	<param-name>javax.ws.rs.container.ContainerRequestFilters</param-name>
+         	<param-value>com.jmiddleway.log.JMiddleWayLoggingFilter</param-value>
+    	 </init-param>
+	     <init-param>
+	         <param-name>javax.ws.rs.container.container.ContainerResponseFilters</param-name>
+	         <param-value>com.jmiddleway.log.JMiddleWayLoggingFilter</param-value>
+	     </init-param>	
+	     <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JMiddleWay - Middlwawre framework</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+</web-app>
