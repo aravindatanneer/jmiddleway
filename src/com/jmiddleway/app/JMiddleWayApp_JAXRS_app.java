@@ -16,6 +16,7 @@ import com.jmiddleway.app.ExceptionMappers.JMiddleWayGenericExceptionMapper;
 import com.jmiddleway.app.filters.ApplicationContextProvider;
 import com.jmiddleway.log.JMiddleWayLoggingFilter;
 import com.jmiddleway.log.LoggerInjector;
+import com.jmiddleway.service.YourResourceService;
 
 
 public class JMiddleWayApp_JAXRS_app extends ResourceConfig {
@@ -29,6 +30,8 @@ public class JMiddleWayApp_JAXRS_app extends ResourceConfig {
 		register(JMiddleWayExceptionMapper.class);
 		register(JMiddleWayGenericExceptionMapper.class);
 		register(ApplicationContextProvider.class);
+		register(YourResourceService.class);
+		
 		
 		// Optionally remove existing handlers attached to j.u.l root logger
 		SLF4JBridgeHandler.removeHandlersForRootLogger();  // (since SLF4J 1.6.5)

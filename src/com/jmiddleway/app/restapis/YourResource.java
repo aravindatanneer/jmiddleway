@@ -22,7 +22,7 @@ import com.jmiddleway.service.YourResourceService;
  * ex GET,CREATE, PUT or DEL a row or rows from a particualt table.
  * Pass the parameter as JSON object mapped to POJO. Write your own JSON and use POJO mapping tool 
  * to generate Java class. When REST client sends the parameter as JSON object it will be mapped to 
- * Java object automatically by frameowrk 
+ * Java object automatically by framwork 
  * */
 
 @Component
@@ -31,8 +31,7 @@ public class YourResource {
 	@Autowired
 	private YourResourceService yourResourceService;
 	
-	@GET
-	
+	@GET	
 	@Produces("application/json")
 	public Response GetYourResource(@Context HttpServletRequest request) throws JMiddleWayException {	
 		
